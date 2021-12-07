@@ -1,0 +1,246 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background: #11101d;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+
+  &.active {
+    width: 240px;
+
+    .logo-content {
+      .logo {
+        opacity: 1;
+        pointer-events: none;
+      }
+    }
+
+    #btn {
+      left: 90%;
+    }
+
+    ul {
+      li {
+        .tooltip {
+          display: none;
+        }
+        .links-name {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+    .profile-content {
+      .profile {
+        #log-out {
+          left: 88%;
+        }
+        .profile-details {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+    ~ .home-content {
+      width: calc(100% - 240px);
+      left: 240px;
+    }
+  }
+
+  .logo-content {
+    .logo {
+      color: white;
+      display: flex;
+      height: 50px;
+      width: 100%;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s ease;
+      i {
+        font-size: 28px;
+        margin-right: 5px;
+      }
+      .logo-name {
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+  }
+  #btn {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+  }
+  ul {
+    margin-top: 20px;
+    li {
+      list-style: none;
+      position: relative;
+      height: 50px;
+      width: 100%;
+      margin: 0 5px;
+      line-height: 50px;
+
+      &:hover .tooltip {
+        transition: all 0.5s ease;
+        top: 50%;
+        opacity: 1;
+      }
+
+      .tooltip {
+        position: absolute;
+        left: 122px;
+        top: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 6px;
+        height: 35px;
+        width: 122px;
+        background: white;
+        line-height: 35px;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        transition: 0s;
+        opacity: 0;
+        pointer-events: none;
+        display: block;
+      }
+
+      .links-name {
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.5s ease;
+      }
+
+      .bx-search {
+        position: absolute;
+        z-index: 99;
+        color: white;
+        left: 15px;
+        min-width: 50px;
+        line-height: 50px;
+        font-size: 23px;
+        transition: all 0.5s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      a {
+        color: white;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: all 0.4s ease;
+        white-space: nowrap;
+
+        &:hover {
+          color: #11101d;
+          background: white;
+        }
+
+        i {
+          height: 50px;
+          min-width: 50px;
+          border-radius: 12px;
+          line-height: 50px;
+          text-align: center;
+        }
+      }
+
+      input {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 12px;
+        outline: none;
+        border: none;
+        background: #1d1b31;
+        padding-left: 50px;
+        font-size: 18px;
+        color: white;
+      }
+    }
+  }
+
+  .profile-content {
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .profile {
+      position: relative;
+      padding: 10px 6px;
+      height: 60px;
+      background: #1d1b31;
+
+      .profile-details {
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        white-space: nowrap;
+        transition: all 0.5s ease;
+        img {
+          height: 45px;
+          width: 45px;
+          object-fit: cover;
+          border-radius: 12px;
+        }
+        .name-job {
+          margin-left: 10px;
+
+          .name {
+            font-size: 15px;
+            font-weight: 400;
+          }
+          .job {
+            font-size: 12px;
+          }
+        }
+      }
+
+      #log-out {
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        transform: translateX(-50%);
+        min-width: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        border-radius: 12px;
+        text-align: center;
+      }
+    }
+  }
+}
+.home-content {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+  transition: all 0.5s ease;
+
+  .text {
+    font-size: 25px;
+    font-weight: 500;
+    color: #1d1b31;
+    margin: 12px;
+  }
+}
